@@ -1,20 +1,20 @@
 use std::io;
 
-fn add(x: i32, y: i32) -> i32 {
+fn add(x: &i32, y: &i32) -> i32 {
     x + y
 }
 
-fn substract(x: i32, y: i32) -> i32 {
+fn substract(x: &i32, y: &i32) -> i32 {
     x - y
 }
 
-fn multiply(x: i32, y: i32) -> i32 {
+fn multiply(x: &i32, y: &i32) -> i32 {
     x * y
 }
 
-fn divide(x: i32, y: i32) -> i32 {
+fn divide(x: &i32, y: &i32) -> i32 {
     // FIXME
-    if y > 0 {
+    if y > &0 {
         x / y
     } else {
         0
@@ -51,19 +51,19 @@ fn main() {
             let mut result: i32 = 0;
 
             if signe == "+" {
-                result = add(x, y);
+                result = add(&x, &y);
             }
 
             if signe == "-" {
-                result = substract(x, y);
+                result = substract(&x, &y);
             }
 
             if signe == "*" {
-                result = multiply(x, y);
+                result = multiply(&x, &y);
             }
 
             if signe == "/" {
-                result = divide(x, y);
+                result = divide(&x, &y);
             }
             println!("Result = {}", result);
         }
